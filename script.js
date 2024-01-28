@@ -152,3 +152,28 @@ function canMoveInGroup(group) {
     return targetCell.canAccept(cell.linkedTile);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const preloader = document.querySelector(".preloader");
+  const content = document.querySelector(".content");
+
+
+  setTimeout(() => {
+    preloader.style.opacity = 0;
+    setTimeout(() => {
+      preloader.style.display = "none";
+      content.style.display = "block";
+    }, 500);
+  }, 3000); // 
+
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      preloader.style.opacity = 0;
+      setTimeout(() => {
+        preloader.style.display = "none";
+        content.style.display = "block";
+      }, 500);
+    }
+  });
+});
